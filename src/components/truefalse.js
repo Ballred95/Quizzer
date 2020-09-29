@@ -1,22 +1,40 @@
+
 import React, { useState } from 'react' 
 import Questions from './questions';
+import ShowQuiz from './showQuiz';
 
 export default function Truefalse(props) {
 
     const [questions, setQuestions] =useState([1])
+    const [showit, setShow] = useState([])
+    const [submit, setSubmit] = useState(false)
+    
 
+    const questionData = []
 
+    const changer = function(info) {
+      console.log(info)
+      
+    }
 
+    function handleClick() {
+      changer
+      setSubmit(true)
 
+      
+    }
+    if(submit == false) {
     return (
         <div className='mainDisplay'>
+          <div className='container'>
             <div className='questions'>
             {questions.length > 0 && questions.map((question, index)=> {
-                return <div key={index}><Questions /></div>
+                return <div key={index}><Questions myProp={changer} /></div>
             })}
             </div>
+            </div>
             <div className='counter'>
-                {questions.length <= 5 ? <button onClick={()=> setQuestions([...questions, 1])}>Add Question</button> : <button onClick={()=> setQuestions([...questions])}>Add Question</button>}
+                {questions.length <= 9 ? <button onClick={()=> setQuestions([...questions, 1])}>Add Question</button> : <button onClick={()=> setQuestions([...questions])}>Add Question</button>}
             {questions.length > 0 ? (
                 
                <button
@@ -29,8 +47,22 @@ export default function Truefalse(props) {
                </button>
              ) : null}
              
-            <h1>questions: {questions.length}</h1>
+            <h1>Questions: {questions.length}</h1>
+            
             </div>
+            <button onClick={handleClick}>submit</button>
+            
+            
         </div>
-        )
+        ) }
+        else if (submit == true) {
+          return (
+            <div>
+              {showit}
+            </div>
+          )
+        }
+
+        
 }
+

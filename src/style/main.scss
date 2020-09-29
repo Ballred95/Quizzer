@@ -30,22 +30,31 @@ box-shadow: 10px 10px 18px 3px rgba(0,0,0,0.34);
 .mainDisplay{
     display: flex;
     justify-content: center;
-    flex-direction: column-reverse;
+    flex-direction: column;
     margin: 30px;
     
+    .container {
+        display: flex;
+        justify-content: center;
+    }
 
     .questions {
+        overflow: scroll;
         display: flex;
         flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-evenly;
         background-color: red;
-        height: 60vh;
-        width: 70vw;
+        height: 80vh;
+        width: 1244px;
+        
     }
 
     .counter {
+        text-align: center;
         
+    }
+
+    .quiz-question {
+        margin: 20px;
     }
 }
 

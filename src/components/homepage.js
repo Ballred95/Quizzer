@@ -19,15 +19,20 @@ render() {
                <h1 style={{textAlign: 'center'}}>Welcome to The Quiz Creator</h1>
         
         <div className='quizzes'>
+        <NavLink to='open' style={{textDecoration:'none', color:"black"}}>
+            <div className='quiz-card'>Open Ended
+            <h3>coming soon!</h3>
+            </div>
+            </NavLink>
             <NavLink to='/truefalse' style={{textDecoration:'none', color:"black"}}>
             <div className='quiz-card'>True/False</div>
             </NavLink>
             <NavLink to='/multi' style={{textDecoration:'none', color:"black"}}>
-            <div className='quiz-card'>Multi Choice</div>
+            <div className='quiz-card'>Multi Choice
+            <h3>coming soon!</h3>
+            </div>
             </NavLink>
-            <NavLink to='open' style={{textDecoration:'none', color:"black"}}>
-            <div className='quiz-card'>Open Ended</div>
-            </NavLink>
+            
         </div>
            </div>
        )
