@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Truefalse from './truefalse'
 import Open from './open'
 import Multi from './multi'
+import { CookiesProvider } from 'react-cookie';
 import {
   BrowserRouter as Router,
   Switch,
@@ -14,6 +15,7 @@ import Homepage from './homepage';
 export default class App extends Component {
   render() {
     return (
+      <CookiesProvider>
       <div className='app'>
         
         <Router>
@@ -27,6 +29,7 @@ export default class App extends Component {
             </Switch>
             </Router>
       </div>
+      </CookiesProvider>
     );
   }
 }

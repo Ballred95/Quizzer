@@ -12,13 +12,13 @@ export default function Truefalse(props) {
 
     const questionData = []
 
-    const changer = function(info) {
-      console.log(info)
-      
-    }
+    
 
     function handleClick() {
-      changer
+      // console.log(document.cookie)
+      let ans = document.cookie.split(',')
+      let display = ans.map(ans => <div className='ans'>{ans}</div>)
+      setShow(display)
       setSubmit(true)
 
       
@@ -29,7 +29,7 @@ export default function Truefalse(props) {
           <div className='container'>
             <div className='questions'>
             {questions.length > 0 && questions.map((question, index)=> {
-                return <div key={index}><Questions myProp={changer} /></div>
+                return <div key={index}><Questions/></div>
             })}
             </div>
             </div>

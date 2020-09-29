@@ -9,8 +9,10 @@ import FormLabel from '@material-ui/core/FormLabel';
 
 
 
+
 export default function Questions(props) {
-    
+
+        
         const [value, setValue] = React.useState('True');
         const [textValue, setTextValue] = useState('')
         const[finalValue, setFinalValue] = useState('')
@@ -26,14 +28,12 @@ export default function Questions(props) {
         
 
         
-        function handleCookie() {
-         
-          document.cookie = [document.cookie, textValue]
-          
+      function handleCookie() {
+        
+        document.cookie = [document.cookie, textValue]
+      }
 
-        }
-
-        props.myProp(handleCookie)
+        
         
 
    return (
